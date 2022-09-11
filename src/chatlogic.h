@@ -24,8 +24,8 @@ private:
 
     // data handles (not owned)
     GraphNode *_currentNode;
-    ChatBot *_chatBot;
     ChatBotPanelDialog *_panelDialog;
+    ChatBot * _chatBot;
 
     // proprietary type definitions
     typedef std::vector<std::pair<std::string, std::string>> tokenlist;
