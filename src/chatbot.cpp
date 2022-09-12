@@ -27,7 +27,7 @@ ChatBot::ChatBot(std::string filename)
     _rootNode = nullptr;
 
     // load image into heap memory
-    _image = std::make_shared<wxBitmap>(filename, wxBITMAP_TYPE_PNG);
+    _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
 }
 
 ChatBot::~ChatBot()
@@ -39,6 +39,7 @@ ChatBot::~ChatBot()
 ////
 ChatBot::ChatBot(ChatBot &source) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
+    _image = new wxBitmap();
     _image = source._image;
     _chatLogic = source._chatLogic;
     _currentNode = source._currentNode;
@@ -52,6 +53,7 @@ ChatBot& ChatBot::operator=(const ChatBot &source) {
     if (this == &source) {
         return *this;
     }
+    _image = new wxBitmap();
     _image = source._image;
     _chatLogic = source._chatLogic;
     _currentNode = source._currentNode;
