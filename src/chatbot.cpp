@@ -64,6 +64,7 @@ ChatBot& ChatBot::operator=(const ChatBot &source) {
 
 ChatBot::ChatBot(ChatBot &&source) {
     std::cout << "ChatBot Move Constructor" << std::endl;
+    _image = new wxBitmap();
     _image = source._image;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
